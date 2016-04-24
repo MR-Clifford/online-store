@@ -1,4 +1,4 @@
-package xml_mike.online_store.presenter;
+package xml_mike.online_store.controllers;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -11,37 +11,35 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import xml_mike.online_store.R;
-import xml_mike.online_store.controllers.Global;
 import xml_mike.online_store.models.Product;
+import xml_mike.online_store.presenter.NotifyDataSetChanged;
+import xml_mike.online_store.presenter.ProductRecyclerViewAdapter;
 
 /**
  * A fragment representing a list of Items.
  * <p/>
- * Activities containing this fragment MUST implement the {@link WishlistFragmentInteractionListener}
+ * Activities containing this fragment MUST implement the {@link ProductFragmentInteractionListener}
  * interface.
  */
-public class WishlistFragment extends Fragment implements NotifyDataSetChanged {
+public class ProductFragment extends Fragment implements NotifyDataSetChanged {
 
-    // TODO: Customize parameter argument names
     private static final String ARG_COLUMN_COUNT = "column-count";
-    // TODO: Customize parameters
     private int mColumnCount = 1;
-    private WishlistFragmentInteractionListener mListener;
-    private WishlistProductRecyclerViewAdapter wishlistProductRecyclerViewAdapter;
+    ProductRecyclerViewAdapter productRecyclerViewAdapter;
+    private ProductFragmentInteractionListener mListener;
 
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
      * fragment (e.g. upon screen orientation changes).
      */
-    public WishlistFragment() {
+    public ProductFragment() {
+
     }
 
-    // TODO: Customize parameter initialization
     @SuppressWarnings("unused")
-    public static WishlistFragment newInstance(int columnCount) {
-        WishlistFragment fragment = new WishlistFragment();
+    public static ProductFragment newInstance(int columnCount) {
+        ProductFragment fragment = new ProductFragment();
         Bundle args = new Bundle();
-        args.putInt(ARG_COLUMN_COUNT, columnCount);
         fragment.setArguments(args);
         return fragment;
     }
@@ -58,8 +56,8 @@ public class WishlistFragment extends Fragment implements NotifyDataSetChanged {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_product_list_wishlist, container, false);
-        wishlistProductRecyclerViewAdapter = new WishlistProductRecyclerViewAdapter(Global.wishlist, mListener);
+        View view = inflater.inflate(R.layout.fragment_product_list, container, false);
+        productRecyclerViewAdapter = new ProductRecyclerViewAdapter(Global.products, mListener);
 
         // Set the adapter
         if (view instanceof RecyclerView) {
@@ -70,8 +68,11 @@ public class WishlistFragment extends Fragment implements NotifyDataSetChanged {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            recyclerView.setAdapter(wishlistProductRecyclerViewAdapter);
+
+            recyclerView.setAdapter(productRecyclerViewAdapter);
+
         }
+
         return view;
     }
 
@@ -79,11 +80,10 @@ public class WishlistFragment extends Fragment implements NotifyDataSetChanged {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        if (context instanceof WishlistFragmentInteractionListener) {
-            mListener = (WishlistFragmentInteractionListener) context;
+        if (context instanceof ProductFragmentInteractionListener) {
+            mListener = (ProductFragmentInteractionListener) context;
         } else {
-            throw new RuntimeException(context.toString()
-                    + " must implement OnListFragmentInteractionListener");
+            throw new RuntimeException(context.toString() + " must implement OnListFragmentInteractionListener");
         }
     }
 
@@ -94,9 +94,9 @@ public class WishlistFragment extends Fragment implements NotifyDataSetChanged {
     }
 
     @Override
-    public void notifyDataSetChanged() {
-        if(wishlistProductRecyclerViewAdapter != null)
-            wishlistProductRecyclerViewAdapter.notifyDataSetChanged();
+    public void notifyDataSetChanged(){
+        if(productRecyclerViewAdapter != null)
+            productRecyclerViewAdapter.notifyDataSetChanged();
     }
 
     /**
@@ -109,8 +109,8 @@ public class WishlistFragment extends Fragment implements NotifyDataSetChanged {
      * "http://developer.android.com/training/basics/fragments/communicating.html"
      * >Communicating with Other Fragments</a> for more information.
      */
-    public interface WishlistFragmentInteractionListener {
+    public interface ProductFragmentInteractionListener {
+        void addToWishlist(Product product);
         void addToCart(Product product);
-        void removeFromWishlist(Product product);
     }
 }

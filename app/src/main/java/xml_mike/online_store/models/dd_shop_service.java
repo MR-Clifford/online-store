@@ -1,4 +1,4 @@
-package xml_mike.online_store.controllers;
+package xml_mike.online_store.models;
 
 import java.util.List;
 
@@ -9,13 +9,11 @@ import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.Path;
-import xml_mike.online_store.models.CartItem;
-import xml_mike.online_store.models.Product;
 
 /**
  * Created by MClifford on 22/04/16.
  *
- * Based on API given for web store.
+ * Based on API given for web store. These map all of the responses of the API including the Get, Post and Delete
  */
 public interface dd_shop_service {
 

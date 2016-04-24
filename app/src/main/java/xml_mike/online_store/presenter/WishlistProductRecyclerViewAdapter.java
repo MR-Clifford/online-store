@@ -10,12 +10,13 @@ import android.widget.TextView;
 import java.util.List;
 
 import xml_mike.online_store.R;
+import xml_mike.online_store.controllers.WishlistFragment;
 import xml_mike.online_store.models.Product;
 
 /**
  * {@link RecyclerView.Adapter} that can display a {@link xml_mike.online_store.models.Product} and makes a call to the
- * specified {@link xml_mike.online_store.presenter.WishlistFragment.WishlistFragmentInteractionListener}.
- * TODO: Replace the implementation with code for your data type.
+ * specified {@link WishlistFragment.WishlistFragmentInteractionListener}.
+ *
  */
 public class WishlistProductRecyclerViewAdapter extends RecyclerView.Adapter<WishlistProductRecyclerViewAdapter.ViewHolder> {
 

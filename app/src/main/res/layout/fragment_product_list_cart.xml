@@ -12,7 +12,7 @@
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         app:layoutManager="LinearLayoutManager"
-        tools:context="xml_mike.online_store.presenter.CartFragment"
+        tools:context=".controllers.CartFragment"
         tools:listitem="@layout/fragment_product_cart"
         android:layout_above="@+id/total" />
 

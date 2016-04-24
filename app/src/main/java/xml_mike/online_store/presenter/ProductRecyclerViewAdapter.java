@@ -11,12 +11,11 @@ import java.util.List;
 
 import xml_mike.online_store.R;
 import xml_mike.online_store.models.Product;
-import xml_mike.online_store.presenter.ProductFragment.ProductFragmentInteractionListener;
+import xml_mike.online_store.controllers.ProductFragment.ProductFragmentInteractionListener;
 
 /**
  * {@link RecyclerView.Adapter} that can display a {@link Product} and makes a call to the
  * specified {@link ProductFragmentInteractionListener}.
- * TODO: Replace the implementation with code for your data type.
  */
 public class ProductRecyclerViewAdapter extends RecyclerView.Adapter<ProductRecyclerViewAdapter.ViewHolder> {
 

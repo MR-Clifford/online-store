@@ -1,4 +1,4 @@
-package xml_mike.online_store.presenter;
+package xml_mike.online_store.controllers;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -14,8 +14,9 @@ import android.widget.TextView;
 import java.text.DecimalFormat;
 
 import xml_mike.online_store.R;
-import xml_mike.online_store.controllers.Global;
 import xml_mike.online_store.models.CartItem;
+import xml_mike.online_store.presenter.CartProductRecyclerViewAdapter;
+import xml_mike.online_store.presenter.NotifyDataSetChanged;
 
 /**
  * A fragment representing a list of Items.
@@ -128,7 +129,6 @@ public class CartFragment extends Fragment implements NotifyDataSetChanged {
      * >Communicating with Other Fragments</a> for more information.
      */
     public interface CartFragmentInteractionListener {
-        // TODO: Update argument type and name
         void removeFromCart(CartItem cartItem);
     }
 

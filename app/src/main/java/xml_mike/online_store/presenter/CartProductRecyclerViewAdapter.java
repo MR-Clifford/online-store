@@ -10,12 +10,13 @@ import android.widget.TextView;
 import java.util.List;
 
 import xml_mike.online_store.R;
+import xml_mike.online_store.controllers.CartFragment;
 import xml_mike.online_store.models.CartItem;
 import xml_mike.online_store.models.Product;
 
 /**
  * {@link RecyclerView.Adapter} that can display a {@link Product} and makes a call to the
- * specified {@link xml_mike.online_store.presenter.CartFragment.CartFragmentInteractionListener}.
+ * specified {@link CartFragment.CartFragmentInteractionListener}.
  */
 public class CartProductRecyclerViewAdapter extends RecyclerView.Adapter<CartProductRecyclerViewAdapter.ViewHolder> {
 
