@@ -22,8 +22,8 @@ import xml_mike.online_store.R;
 import xml_mike.online_store.models.CartItem;
 import xml_mike.online_store.models.Product;
 import xml_mike.online_store.models.dd_shop_service;
-import xml_mike.online_store.presenter.PageAdapter;
-import xml_mike.online_store.presenter.NotifyDataSetChanged;
+import xml_mike.online_store.view.PageAdapter;
+import xml_mike.online_store.view.NotifyDataSetChanged;
 
 public class MainActivity extends AppCompatActivity implements ProductFragment.ProductFragmentInteractionListener , CartFragment.CartFragmentInteractionListener, WishlistFragment.WishlistFragmentInteractionListener {
 

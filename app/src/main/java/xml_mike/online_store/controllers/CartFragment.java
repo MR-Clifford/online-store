@@ -15,8 +15,8 @@ import java.text.DecimalFormat;
 
 import xml_mike.online_store.R;
 import xml_mike.online_store.models.CartItem;
-import xml_mike.online_store.presenter.CartProductRecyclerViewAdapter;
-import xml_mike.online_store.presenter.NotifyDataSetChanged;
+import xml_mike.online_store.view.CartProductRecyclerViewAdapter;
+import xml_mike.online_store.view.NotifyDataSetChanged;
 
 /**
  * A fragment representing a list of Items.

@@ -1,4 +1,4 @@
-package xml_mike.online_store.presenter;
+package xml_mike.online_store.view;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;

@@ -1,4 +1,4 @@
-package xml_mike.online_store.presenter;
+package xml_mike.online_store.view;
 
 /**
  * Created by MClifford on 22/04/16.

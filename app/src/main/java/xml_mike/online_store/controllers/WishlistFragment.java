@@ -12,8 +12,8 @@ import android.view.ViewGroup;
 
 import xml_mike.online_store.R;
 import xml_mike.online_store.models.Product;
-import xml_mike.online_store.presenter.NotifyDataSetChanged;
-import xml_mike.online_store.presenter.WishlistProductRecyclerViewAdapter;
+import xml_mike.online_store.view.NotifyDataSetChanged;
+import xml_mike.online_store.view.WishlistProductRecyclerViewAdapter;
 
 /**
  * A fragment representing a list of Items.

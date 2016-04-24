@@ -1,4 +1,4 @@
-package xml_mike.online_store.presenter;
+package xml_mike.online_store.view;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
